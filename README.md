@@ -20,4 +20,4 @@ Mise en place d'une isolation logique des services et centralisation du routage 
 
 * Sécurisation des accès : Isolation de tous les ports inutilisés dans un VLAN 999 (BlackHole) avec extinction administrative.
 
-* 🔗 Consulter le script de configuration VLAN
+* 🔗 [Consulter le script de configuration VLAN](./configs/02_VLAN_config.txt)
