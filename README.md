@@ -18,12 +18,12 @@ Segmentation multi-zones : Création des VLANs 10, 20, 30, 40 pour le siège et 
 
 Architecture de Routage Hybride :
 
-Switch L3 (SVI) : Routage interne du siège pour garantir une commutation à vitesse filaire (Wire-speed).
+* Switch L3 (SVI) : Routage interne du siège pour garantir une commutation à vitesse filaire (Wire-speed).
 
-Router-on-a-Stick : Utilisation de sous-interfaces sur le routeur central pour segmenter la zone opérationnelle.
+* Router-on-a-Stick : Utilisation de sous-interfaces sur le routeur central pour segmenter la zone opérationnelle.
 
-Sécurité des Trunks : Modification du VLAN Natif (VLAN 99) sur les interconnexions pour prévenir les attaques de type VLAN Hopping.
+* Sécurité des Trunks : Modification du VLAN Natif (VLAN 99) sur les interconnexions pour prévenir les attaques de type VLAN Hopping.
 
-Sécurisation des accès : Isolation de tous les ports inutilisés dans un VLAN 999 (BlackHole) avec extinction administrative.
+* Sécurisation des accès : Isolation de tous les ports inutilisés dans un VLAN 999 (BlackHole) avec extinction administrative.
 
-🔗 Consulter le script de configuration VLAN
+* 🔗 Consulter le script de configuration VLAN
