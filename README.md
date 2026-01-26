@@ -17,6 +17,7 @@ Cette étape définit le socle de sécurité indispensable avant le déploiement
 * 🔗 [Consulter le script de base](./configs/01_base_setup.txt)
 ### Phase 2 : Segmentation VLAN & Routage Inter-VLAN
 Mise en place d'une isolation logique des services et centralisation du routage sur le cœur de réseau via une architecture hybride.
+
 🏢 Côté Siège (Switch L3)
 * Segmentation : VLANs 10 (Admin), 20 (Prod), 30 (Sales), 40 (Guest).
 * Routage SVI : Interfaces virtuelles sur le Switch L3 pour un routage inter-VLAN à vitesse filaire.
