@@ -14,10 +14,11 @@
 hostname S3-L3
 no ip domain-lookup        ! Évite les blocages en cas d'erreur de frappe
 ```
-! --- Sécurisation des accès ---
+## Sécurisation des accès 
+```
 enable secret cDawAG8!&E@F  ! Mot de passe du mode privilégié (haché)
 service password-encryption ! Chiffre les mots de passe visibles dans la config
-
+```
 ! --- Création d'un compte administrateur ---
 ! Utilisé pour la connexion SSH
 username admin secret cDawAG8!&E@F
