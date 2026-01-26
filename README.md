@@ -8,8 +8,11 @@ Déploiement d'une architecture réseau hiérarchique. L'objectif est de valider
 ## 2. Implémentation technique
 
 ### Phase 1 : Configuration de base et Sécurité
-Établissement d'une base de sécurité sur l'ensemble des switchs.
-* Activation de **SSHv2**, chiffrement des mots de passe et gestion des accès console.
+* Cette étape définit le socle de sécurité indispensable avant le déploiement des services réseau.
+* Accès Distant : Migration vers SSHv2 (chiffrement RSA 1024 bits) et désactivation du protocole Telnet. 🔑
+* Identité & Accès : Création d'un compte admin local et protection du mode privilégié par hachage MD5. 🛡️
+* Management : Configuration d'une interface SVI dédiée pour l'administration IP de l'équipement. 🌐
+* Confort CLI : Activation du logging synchronous pour éviter les interruptions lors de la saisie des commandes. ⌨️
 * 🔗 [Consulter le script de base](./configs/01_base_setup.txt)
 ### Phase 2 : Segmentation VLAN & Routage Inter-VLAN
 Mise en place d'une isolation logique des services et centralisation du routage sur le cœur de réseau via une architecture hybride.
