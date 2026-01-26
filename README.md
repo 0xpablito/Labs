@@ -14,10 +14,16 @@ Déploiement d'une architecture réseau hiérarchique. L'objectif est de valider
 ## Phase 2 : Segmentation VLAN & Routage Inter-VLAN
 Mise en place d'une isolation logique des services et centralisation du routage sur le cœur de réseau.
 
-* Segmentation multi-zones : Création des VLANs 10, 20, 30, 40 pour le siège et 70, 80 pour la partie opérationnelle.
+Segmentation multi-zones : Création des VLANs 10, 20, 30, 40 pour le siège et 70, 80 pour la partie opérationnelle.
 
-* Routage Haute Performance : Utilisation du switch L3 (SVI) pour le routage interne afin de garantir une commutation à vitesse filaire.
+Architecture de Routage Hybride :
 
-* Sécurisation des accès : Isolation de tous les ports inutilisés dans un VLAN 999 (BlackHole) avec extinction administrative.
+Switch L3 (SVI) : Routage interne du siège pour garantir une commutation à vitesse filaire (Wire-speed).
 
-* 🔗 [Consulter le script de configuration VLAN](./configs/02_vlan_config.txt)
+Router-on-a-Stick : Utilisation de sous-interfaces sur le routeur central pour segmenter la zone opérationnelle.
+
+Sécurité des Trunks : Modification du VLAN Natif (VLAN 99) sur les interconnexions pour prévenir les attaques de type VLAN Hopping.
+
+Sécurisation des accès : Isolation de tous les ports inutilisés dans un VLAN 999 (BlackHole) avec extinction administrative.
+
+🔗 Consulter le script de configuration VLAN
