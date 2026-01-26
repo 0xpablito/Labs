@@ -5,15 +5,15 @@
 
 ### 📋 Script de configuration
 
-```ios
 ! #######################################################
 ! CONFIGURATION DE BASE ET SÉCURITÉ
 ! #######################################################
 
-! --- Identification et DNS ---
+## Identification et DNS
+```
 hostname S3-L3
 no ip domain-lookup        ! Évite les blocages en cas d'erreur de frappe
-
+```
 ! --- Sécurisation des accès ---
 enable secret cDawAG8!&E@F  ! Mot de passe du mode privilégié (haché)
 service password-encryption ! Chiffre les mots de passe visibles dans la config
