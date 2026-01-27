@@ -14,7 +14,8 @@ Cette étape définit le socle de sécurité indispensable avant le déploiement
 * Identité & Accès : Création d'un compte admin local et protection du mode privilégié par hachage MD5. 
 * Management : Configuration d'une interface SVI dédiée pour l'administration IP de l'équipement. 
 * Confort CLI : Activation du logging synchronous pour éviter les interruptions lors de la saisie des commandes. 
-* 🔗 [Consulter le script de base](./configs/01_base_setup.txt)
+* 🔗 [Consulter le script de base](./configs/01_base_setup.md)
+* 🧪 [Consulter les tests de validation](./test/01_base_setup.md)
 ### Phase 2 : Segmentation VLAN & Routage Inter-VLAN
 Mise en place d'une isolation logique des services et centralisation du routage sur le cœur de réseau via une architecture hybride.
 
