@@ -27,14 +27,14 @@ Mise en place d'une isolation logique des services et centralisation du routage 
 * Routage SVI : Interfaces virtuelles sur le Switch L3 pour un routage inter-VLAN à vitesse filaire.
 * Optimisation : Activation du PortFast sur les ports d'accès pour une connectivité instantanée des postes de travail.
 
- 🔗 [Consulter le script de base](./configs/02.1_vlan_config.txt)
+ 🔗 [Consulter le script de base](./configs/02.1_vlan_config.md)
 
  Côté Opérations (Router-on-a-Stick)
 * Segmentation : VLANs 70 (Partners) et 80 (Logistics).
 * Routage Sub-interfaces : Utilisation du routeur central pour segmenter les flux opérationnels via le protocole 802.1Q.
 * Lien Trunk : Configuration d'un lien d'agrégation entre le switch d'accès et le routeur pour transporter plusieurs VLANs sur un seul câble.
 
- 🔗 [Consulter le script de base](./configs/02.2_vlan_config.txt)
+ 🔗 [Consulter le script de base](./configs/02.2_vlan_config.md)
 
  Sécurité Réseau Globale
 * VLAN Natif (VLAN 99) : Migration du trafic non tagué vers un VLAN dédié sur tous les Trunks (Switchs et Routeur) pour contrer le VLAN Hopping.
