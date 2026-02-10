@@ -51,5 +51,5 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 * Sécurisation Spanning-Tree : Déploiement du BPDU Guard et du Root Guard pour éviter les boucles ou les switchs malveillants.
 * Optimisation STP : Activation du PortFast sur tous les ports utilisateurs. Cela permet aux PC d'accéder au réseau immédiatement (en sautant les 30 secondes d'attente du Spanning-Tree) dès qu'ils sont branchés.
 
-🔗 [Consulter le script de base]() 
+🔗 [Consulter le script de base](03_Etherchannel.md) 
 🧪 [Consulter les tests de validation]()
