@@ -43,3 +43,13 @@ Mise en place d'une isolation logique des services et centralisation du routage 
 * VLAN "BlackHole" (VLAN 999) : Redirection de tous les ports inutilisés vers un VLAN isolé avec extinction administrative (shutdown).
 
 ### Phase 3 : Haute Disponibilité & Performance Réseau
+Optimisation des liaisons physiques et sécurisation de la topologie pour garantir une infrastructure résiliente face aux pannes.
+
+* Agrégation de Liens (LACP) : Création de liens agrégés (Port-Channels) entre le Switch L3 et les switchs d'accès pour augmenter la bande passante et offrir une redondance matérielle.
+* Interopérabilité : Utilisation du protocole LACP (IEEE 802.3ad). Ce choix garantit l'interopérabilité avec des équipements multi-constructeurs.
+* Négociation Dynamique : Configuration en mode Active pour permettre une détection automatique des erreurs et une agrégation sécurisée des liens physiques.
+* Sécurisation Spanning-Tree : Déploiement du BPDU Guard et du Root Guard pour éviter les boucles ou les switchs malveillants.
+* Optimisation STP : Activation du PortFast sur tous les ports utilisateurs. Cela permet aux PC d'accéder au réseau immédiatement (en sautant les 30 secondes d'attente du Spanning-Tree) dès qu'ils sont branchés.
+
+🔗 [Consulter le script de base]() 
+🧪 [Consulter les tests de validation]()
