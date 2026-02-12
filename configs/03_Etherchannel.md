@@ -59,5 +59,8 @@ Exemple pour S1
 interface range f0/1 - 10     ! On cible les ports qui ne sont pas des Trunks
  spanning-tree portfast       ! Active la connectivité immédiate (évite les 30s d'attente)
  spanning-tree bpduguard enable ! Sécurité : coupe le port si on y branche un switch pirate
- description PORTS_UTILISATEURS
+interface range f0/1 - 5
+ description LAN10
+interface range f0/6-10
+ description LAN20
 ```   
