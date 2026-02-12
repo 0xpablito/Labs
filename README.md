@@ -53,3 +53,11 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 
 🔗 [Consulter le script de base](/configs/03_Etherchannel.md) 
 🧪 [Consulter les tests de validation](/tests/03_Etherchannel.md)
+
+### Phase 4 : Services IP & Connectivité WAN
+
+#### 1. Adressage Dynamique (DHCP)
+* Mise en place de serveurs DHCP pour automatiser l'attribution des adresses IP.
+* Côté Siège (Switch L3) : Création des pools pour les VLANs 10, 20, 30 et 40.
+* Côté Dépot (Routeur) : Création des pools pour les VLANs 70 et 80.
+* Exclusions : Réservation des 5 premières adresses de chaque pool pour les équipements statiques (passerelles, imprimantes).
