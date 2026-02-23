@@ -63,3 +63,15 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 * Côté Siège (Switch L3) : Création des pools pour les VLANs 10, 20, 30 et 40.
 * Côté Dépot (Routeur) : Création des pools pour les VLANs 70 et 80.
 * Exclusions : Réservation des 5 premières adresses de chaque pool pour les équipements statiques (passerelles, imprimantes).
+* Étendue des services : Distribution automatique de l'adresse IP, du masque, de la passerelle et du serveur DNS (8.8.8.8).
+
+#### 2. Sécurité et Contrôle d'Accès (ACL)
+* Mise en place de filtres pour sécuriser l'infrastructure et restreindre l'accès aux ressources sensibles.
+* Isolation de l'imprimante : Utilisation d'une ACL étendue (101) pour interdire au VLAN 40 (Guest) de communiquer avec l'imprimante de production (192.168.20.2).
+* Filtrage NAT : Définition d'une liste de réseaux autorisés à sortir vers l'extérieur.
+* Sécurité Management : Restriction des accès VTY (SSH) pour autoriser uniquement l'adresse IP de l'administrateur.
+
+#### 3. Translation d'Adresses (NAT/PAT)
+* Mise en place de la connectivité vers le monde extérieur via le routeur de sortie.
+* NAT Overload (PAT) : Traduction de l'ensemble des adresses privées du réseau vers l'adresse publique unique de l'interface Serial.
+* Segmentation Inside/Outside : Marquage des interfaces locales comme "inside" et de l'interface WAN comme "outside" pour activer le moteur de translation.
