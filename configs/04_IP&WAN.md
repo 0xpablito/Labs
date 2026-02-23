@@ -38,18 +38,18 @@ ip dhcp pool VLAN40_GUEST
 #### Gestion de l'adressage pour les partenaires et la logistique distante.
 ```
  --- Exclusions DHCP (Réservation pour passerelles et imprimantes) ---
-ip dhcp excluded-address 192.168.70.1 192.168.70.5
-ip dhcp excluded-address 192.168.80.1 192.168.80.5
+ip dhcp excluded-address 172.16.70.1 172.16.70.5
+ip dhcp excluded-address 172.16.80.1 172.16.80.5
 
  --- Création des Pools ---
 ip dhcp pool VLAN70_PARTNERS
- network 192.168.70.0 255.255.255.0
- default-router 192.168.70.1
+ network 172.16.70.0 255.255.255.0
+ default-router 172.16.70.1
  dns-server 8.8.8.8
 
 ip dhcp pool VLAN80_LOGISTICS
- network 192.168.80.0 255.255.255.0
- default-router 192.168.80.1
+ network 172.16.80.1 255.255.255.0
+ default-router 172.16.80.1
  dns-server 8.8.8.8
 ```
 ##  2. Sécurisation des accès et filtrage (ACL)
