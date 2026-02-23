@@ -57,21 +57,14 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 🧪 [Consulter les tests de validation](/tests/03_Etherchannel.md)
 
 ### Phase 4 : Services IP & Connectivité WAN
+* Finalisation de la couche de services pour l'autonomie des utilisateurs et l'ouverture sécurisée du réseau vers l'extérieur.
+* Adressage Dynamique (DHCP) : Centralisation du service sur le Switch L3 (Siège) et le Routeur (Dépôt) pour automatiser l'attribution des adresses IP.
+* Gestion des Exclusions : Réservation des adresses .1 à .5 dans chaque pool pour sécuriser les passerelles et les ressources statiques (comme l'imprimante réseau).
+* Sécurité & Filtrage (ACL) :
+  * ACL Étendue (101) : Isolation de l'imprimante de production (192.168.20.2) pour interdire tout flux provenant du VLAN 40 (Guest).
+  * ACL de Management (10) : Restriction des accès VTY pour autoriser uniquement les postes du VLAN Admin à configurer les équipements.
+* Translation d'Adresses (NAT/PAT) : Mise en œuvre du NAT Overload sur l'interface Serial du routeur pour permettre à tous les VLANs internes de partager une IP publique unique.
+* Routage Statique : Configuration d'une route par défaut vers l'ISP et de routes récapitulatives pour assurer la communication bidirectionnelle entre le Siège et le Dépôt.
 
-#### 1. Adressage Dynamique (DHCP)
-* Mise en place de serveurs DHCP pour automatiser l'attribution des adresses IP.
-* Côté Siège (Switch L3) : Création des pools pour les VLANs 10, 20, 30 et 40.
-* Côté Dépot (Routeur) : Création des pools pour les VLANs 70 et 80.
-* Exclusions : Réservation des 5 premières adresses de chaque pool pour les équipements statiques (passerelles, imprimantes).
-* Étendue des services : Distribution automatique de l'adresse IP, du masque, de la passerelle et du serveur DNS (8.8.8.8).
-
-#### 2. Sécurité et Contrôle d'Accès (ACL)
-* Mise en place de filtres pour sécuriser l'infrastructure et restreindre l'accès aux ressources sensibles.
-* Isolation de l'imprimante : Utilisation d'une ACL étendue (101) pour interdire au VLAN 40 (Guest) de communiquer avec l'imprimante de production (192.168.20.2).
-* Filtrage NAT : Définition d'une liste de réseaux autorisés à sortir vers l'extérieur.
-* Sécurité Management : Restriction des accès VTY (SSH) pour autoriser uniquement l'adresse IP de l'administrateur.
-
-#### 3. Translation d'Adresses (NAT/PAT)
-* Mise en place de la connectivité vers le monde extérieur via le routeur de sortie.
-* NAT Overload (PAT) : Traduction de l'ensemble des adresses privées du réseau vers l'adresse publique unique de l'interface Serial.
-* Segmentation Inside/Outside : Marquage des interfaces locales comme "inside" et de l'interface WAN comme "outside" pour activer le moteur de translation.
+🔗 [Consulter le script de base](/configs/04_IP&WAN.md) 
+🧪 [Consulter les tests de validation]()
