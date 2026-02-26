@@ -103,3 +103,10 @@ ip route 192.168.0.0 255.255.0.0 10.0.0.2        ! Route de retour vers tous les
 
  --- Switch L3 ---
 ip route 0.0.0.0 0.0.0.0 10.0.0.1                ! Le Switch L3 envoie tout au Routeur pour sortir
+```
+## 5. Simulation Internet (Routeur ISP)
+#### Pour valider le NAT et la connectivité externe, une interface Loopback a été configurée sur le routeur ISP pour simuler le serveur DNS de Google.
+```
+interface Loopback0
+ ip address 8.8.8.8 255.255.255.255
+```
