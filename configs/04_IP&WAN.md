@@ -77,7 +77,7 @@ access-list 1 permit 192.168.0.0 0.0.255.255
 ip nat inside source list 1 interface Serial0/1/0 overload       ! PAT sur l'interface WAN
 
  --- Assignation des rôles des interfaces ---
-interface GigabitEthernet 0/0/0
+interface range GigabitEthernet 0/0/0, GigabitEthernet g0/0/1
  ip nat inside               ! Côté réseau local
  
 interface Serial 0/1/0
