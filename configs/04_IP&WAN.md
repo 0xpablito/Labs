@@ -70,24 +70,29 @@ line vty 0 15
 ##  3. Connectivité Internet (Routeur)
 #### Mise en place du NAT Overload (PAT) pour la sortie vers l'ISP.
 ```
- --- Définition du trafic interne autorisé (ACL NAT) ---
+---  Définition du trafic autorisé (ACL NAT) ---
+Autorise le Siège (192.168.x.x) et le Dépôt (172.16.x.x)
 access-list 1 permit 192.168.0.0 0.0.255.255
+access-list 1 permit 172.16.0.0 0.0.255.255
 
- --- Configuration du moteur NAT ---
+---  Configuration du moteur NAT ---
+ip nat inside source list 1 interface Serial0/1/0 overload
+
+---  Assignation des rôles des interfaces ---
+Interface vers le Siège
 interface GigabitEthernet 0/0/0
- description LINK_TO_SIEGE
- ip nat inside               ! Trafic venant du Siège
+ ip nat inside
 
-interface GigabitEthernet 0/0/1
- description LINK_TO_DEPOT
- ip nat inside               ! Trafic venant du Dépôt 
+Interfaces vers le Dépôt (Router-on-a-Stick)
+Note : Le NAT doit être activé sur chaque sous-interface pour être effectif
+interface GigabitEthernet 0/0/1.70
+ ip nat inside
+interface GigabitEthernet 0/0/1.80
+ ip nat inside
 
- --- Assignation des rôles des interfaces ---
-interface range GigabitEthernet 0/0/0, GigabitEthernet g0/0/1
- ip nat inside               ! Côté réseau local
- 
+Interface vers l'Internet (ISP)
 interface Serial 0/1/0
- ip nat outside              ! Côté fournisseur d'accès (Internet)
+ ip nat outside
 ```
 ##  4. Routage Statique
 #### Configuration des chemins pour la communication inter-sites et l'accès extérieur.
