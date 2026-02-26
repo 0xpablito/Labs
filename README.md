@@ -67,4 +67,4 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 * Routage Statique : Configuration d'une route par défaut vers l'ISP et de routes récapitulatives pour assurer la communication bidirectionnelle entre le Siège et le Dépôt.
 
 🔗 [Consulter le script de base](/configs/04_IP&WAN.md) 
-🧪 [Consulter les tests de validation]()
+🧪 [Consulter les tests de validation](/tests/04_IP&WAN.md)
