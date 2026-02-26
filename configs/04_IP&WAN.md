@@ -74,7 +74,13 @@ line vty 0 15
 access-list 1 permit 192.168.0.0 0.0.255.255
 
  --- Configuration du moteur NAT ---
-ip nat inside source list 1 interface Serial0/1/0 overload       ! PAT sur l'interface WAN
+interface GigabitEthernet 0/0/0
+ description LINK_TO_SIEGE
+ ip nat inside               ! Trafic venant du Siège
+
+interface GigabitEthernet 0/0/1
+ description LINK_TO_DEPOT
+ ip nat inside               ! Trafic venant du Dépôt 
 
  --- Assignation des rôles des interfaces ---
 interface range GigabitEthernet 0/0/0, GigabitEthernet g0/0/1
