@@ -1,9 +1,9 @@
 #  Configuration Phase 4 : Services IP & Connectivité WAN
 
-Ce document détaille la mise en place du serveur DHCP, de la translation d'adresses (NAT) et des règles de sécurité (ACL) sur le Switch Cœur (S3-L3) et le Routeur-Central.
+Ce document détaille la mise en place du serveur DHCP, de la translation d'adresses (NAT) et des règles de sécurité (ACL) sur le Switch Cœur (CORE) et le Routeur-Central.
 
 
-##  1.1 Adressage Dynamique - Zone Siège (S3-L3)
+##  1.1 Adressage Dynamique - Zone Siège (CORE)
 #### Automatisation de la configuration IP pour les services administratifs et commerciaux.
 
 ```
@@ -55,7 +55,7 @@ ip dhcp pool VLAN80_LOGISTICS
 ##  2. Sécurisation des accès et filtrage (ACL)
 #### Restriction d'accès à l'imprimante réseau et protection des lignes VTY.
 ```
- --- ACL 101 : Isolation de l'imprimante (S3-L3) ---
+ --- ACL 101 : Isolation de l'imprimante (CORE) ---
 access-list 101 deny ip 192.168.40.0 0.0.0.255 host 192.168.20.2 ! Bloque Guest vers Imprimante
 access-list 101 permit ip any any                                ! Autorise le reste du trafic
 
