@@ -109,7 +109,7 @@ Optimisation des liaisons physiques et sécurisation de la topologie pour garant
 
 ###  Accès au Lab
 Vous pouvez télécharger le fichier complet pour l'ouvrir dans Cisco Packet Tracer :
-* [📥 Télécharger le lab (.pkt)](lab/LAB-1.pkt)
+* [📥 Télécharger le lab (.pkt)](LAB-1.pkt)
 
 ### 📄 Fichiers de Configuration (Show Run)
 Pour une lecture rapide, les configurations sont disponibles ici :
@@ -117,4 +117,4 @@ Pour une lecture rapide, les configurations sont disponibles ici :
 * [Switch de Cœur (CORE)](configs/CORE.txt)
 * [Switch Accès Admin (ACC-01)](configs/ACC-01.txt)
 * [Switch Accès Prod (ACC-02)](configs/ACC-02.txt)
-* [Switch Accès Dépôt (DEPOT)](configs/ACC-02.txt)
+* [Switch Accès Dépôt (DEPOT)](configs/DEPOT.txt)
