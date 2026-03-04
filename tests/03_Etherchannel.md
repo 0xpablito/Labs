@@ -33,4 +33,9 @@ Validation réelle de la redondance en cas de défaillance d’un lien physique.
    * Taux de réussite du ping : 100%.
 ><img width="1767" height="471" alt="image" src="https://github.com/user-attachments/assets/31008fa9-e2b4-47db-b7ab-1faaff498191" />
 
+  ## 4. Validation BPDU Guard
+Objectif : Prouver que l'infrastructure est capable de se protéger automatiquement contre l'ajout d'équipements non autorisés ou les boucles accidentelles.
 
+* **Action :** Connecter un switch secondaire sur l'un des ports configurés en PortFast (ex: Fa0/3 sur S1).
+* **Points de contrôle :** Le port doit être immédiatement désactivé par le processus Spanning-Tree pour protéger la topologie.
+><img width="1059" height="417" alt="image" src="https://github.com/user-attachments/assets/88a16a97-4a40-46e5-8a1c-b6ade90e88dd" />
